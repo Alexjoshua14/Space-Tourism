@@ -4,6 +4,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { FC } from 'react'
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger
+} from '@/components/ui/sheet'
 
 
 interface NavBarProps {
@@ -33,29 +41,62 @@ const NavBar: FC<NavBarProps> = ({ }) => {
   const pathname = usePathname()
 
   return (
-    <nav className="absolute top-0 lg:top-8 left-0 min-w-fit w-full flex h-24">
-      <div className="z-10 w-1/2 px-4 translate-x-6 lg:translate-x-10 flex flex-row gap-16 items-center">
-        <div className="min-w-fit">
-          <Image src="/assets/shared/logo.svg" width={48} height={48} alt="logo" />
+
+    <div className="absolute top-0 lg:top-8 left-0 min-w-fit w-full flex h-24">
+      <nav className="hidden min-w-fit w-full sm:flex h-full">
+        <div className="z-10 w-1/2 px-4 translate-x-6 lg:translate-x-10 flex flex-row gap-16 items-center">
+          <div className="min-w-fit">
+            <Image src="/assets/shared/logo.svg" width={48} height={48} alt="logo" />
+          </div>
+          <div className="hidden lg:block z-10 w-full h-[1px] bg-white" />
         </div>
-        <div className="hidden lg:block z-10 w-full h-[1px] bg-white" />
+        <ul className="h-full min-w-fit w-1/2 flex items-center justify-center gap-12 bg-white bg-opacity-5 backdrop-blur px-14">
+          {navOptions.map((option, index) => (
+            <li key={`nav-link-${option.name}`}
+              className={`h-full grid place-items-center border-b-2 ${pathname === option.path ? "border-white" : "border-transparent"}`}>
+              <Link href={option.path} className="flex gap-3 tracking-widest">
+                <p className="hidden lg:block font-medium">
+                  {`0${index}`}
+                </p>
+                <p className="text-sm lg:text-base font-extralight">
+                  {option.name.toUpperCase()}
+                </p>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+      <div className="sm:hidden">
+        <Sheet>
+          <SheetTrigger className="absolute right-0 p-8">
+            <Image src="/assets/shared/icon-hamburger.svg" width={24} height={24} alt="hamburger" />
+          </SheetTrigger>
+          <SheetContent className="bg-opacity-10 backdrop-blur-xl border-0 text-white">
+
+            <SheetDescription>
+              <nav>
+                <ul className="h-full min-w-fit w-1/2 flex flex-col gap-12 px-14">
+                  {navOptions.map((option, index) => (
+                    <li key={`nav-link-${option.name}`}
+                      className={`h-full border-b-2 ${pathname === option.path ? "border-white" : "border-transparent"}`}>
+                      <Link href={option.path} className="flex gap-3 tracking-widest">
+                        <p className="font-medium">
+                          {`0${index}`}
+                        </p>
+                        <p className="text-sm lg:text-base font-extralight">
+                          {option.name.toUpperCase()}
+                        </p>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            </SheetDescription>
+
+          </SheetContent>
+        </Sheet>
       </div>
-      <ul className="h-full min-w-fit w-1/2 flex items-center justify-center gap-12 bg-white bg-opacity-5 backdrop-blur px-14">
-        {navOptions.map((option, index) => (
-          <li key={`nav-link-${option.name}`}
-            className={`h-full grid place-items-center border-b-2 ${pathname === option.path ? "border-white" : "border-transparent"}`}>
-            <Link href={option.path} className="flex gap-3 tracking-widest">
-              <p className="hidden lg:block font-medium">
-                {`0${index}`}
-              </p>
-              <p className="text-sm lg:text-base font-extralight">
-                {option.name.toUpperCase()}
-              </p>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </nav>
+    </div>
   )
 }
 
