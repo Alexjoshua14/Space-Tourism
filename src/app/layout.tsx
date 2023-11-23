@@ -1,11 +1,9 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import { Barlow } from 'next/font/google'
 import { Barlow_Condensed } from 'next/font/google'
 import { Bellefair } from 'next/font/google'
 import './globals.css'
 import NavBar from '@/components/navBar'
-import Background from '@/components/background'
 
 
 const barlow =

@@ -1,4 +1,4 @@
-import Background from '@/components/background'
+import Background from '@/components/background/homeBackground'
 import Image from 'next/image'
 
 export default function Home() {
