@@ -1,9 +1,32 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { Barlow } from 'next/font/google'
+import { Barlow_Condensed } from 'next/font/google'
+import { Bellefair } from 'next/font/google'
 import './globals.css'
 import NavBar from '@/components/navBar'
+import Background from '@/components/background'
 
-const inter = Inter({ subsets: ['latin'] })
+
+const barlow =
+  Barlow({
+    subsets: ['latin'],
+    weight: ['100', '200', '300', '400', '500', '600', '700', '800'],
+    variable: '--font-barlow',
+  })
+const barlow_condensed =
+  Barlow_Condensed({
+    subsets: ['latin'],
+    weight: ['100', '200', '300', '400', '500', '600', '700', '800'],
+    variable: '--font-barlow-condensed',
+  })
+const bellefair =
+  Bellefair({
+    subsets: ['latin'],
+    weight: ['400'],
+    variable: '--font-bellefair',
+  })
+
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -17,7 +40,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-slate-900 text-white`}>
+      <body className={`${barlow.variable} ${barlow_condensed.variable} ${bellefair.variable} bg-slate-900 text-white `}>
         <NavBar />
         {children}
       </body>
