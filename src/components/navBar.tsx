@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import {
   Sheet,
   SheetContent,
@@ -37,6 +37,40 @@ const navOptions = [
   },
 ]
 
+const MobileNavBar = ({ pathname }: { pathname: string }) => {
+  const [open, setOpen] = useState(false)
+
+  return (
+    <Sheet open={open} onOpenChange={setOpen}>
+      <SheetTrigger role='Open navigation' aria-label='Main' className="absolute right-0 p-8">
+        <Image src="/assets/shared/icon-hamburger.svg" width={24} height={24} alt="hamburger" />
+      </SheetTrigger>
+      <SheetContent className="bg-opacity-10 backdrop-blur-2xl border-0 text-white">
+        <SheetDescription>
+          <nav>
+            <ul className="h-full min-w-fit w-1/2 flex flex-col gap-8 px-5 py-20">
+              {navOptions.map((option, index) => (
+                <li key={`nav-link-${option.name}`}
+                  className={`h-full border-b-2 transition-colors ${pathname === option.path ? "border-white" : "border-transparent"}`}>
+                  <Link href={option.path} className="flex gap-3 tracking-widest text-lg text-white font-header" onClick={() => setOpen(false)}>
+                    <p className="font-bold tracking-[0.2rem]">
+                      {`0${index}`}
+                    </p>
+                    <p className="font-extralight">
+                      {option.name.toUpperCase()}
+                    </p>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </SheetDescription>
+
+      </SheetContent>
+    </Sheet>
+  )
+}
+
 const NavBar: FC<NavBarProps> = ({ }) => {
   const pathname = usePathname()
 
@@ -54,8 +88,8 @@ const NavBar: FC<NavBarProps> = ({ }) => {
           {navOptions.map((option, index) => (
             <li key={`nav-link-${option.name}`}
               className={`h-full grid place-items-center border-b-2 ${pathname === option.path ? "border-white" : "border-transparent"}`}>
-              <Link href={option.path} className="flex gap-3 tracking-widest">
-                <p className="hidden lg:block font-medium">
+              <Link href={option.path} className="flex gap-3 tracking-widest font-header">
+                <p className="hidden lg:block font-bold tracking-[0.2rem]">
                   {`0${index}`}
                 </p>
                 <p className="text-sm lg:text-base font-extralight">
@@ -68,33 +102,7 @@ const NavBar: FC<NavBarProps> = ({ }) => {
       </nav>
       {/** Mobile */}
       <div className="sm:hidden">
-        <Sheet>
-          <SheetTrigger role='Open navigation' aria-label='Main' className="absolute right-0 p-8">
-            <Image src="/assets/shared/icon-hamburger.svg" width={24} height={24} alt="hamburger" />
-          </SheetTrigger>
-          <SheetContent className="bg-opacity-10 backdrop-blur-2xl border-0 text-white">
-            <SheetDescription>
-              <nav>
-                <ul className="h-full min-w-fit w-1/2 flex flex-col gap-8 px-5 py-20">
-                  {navOptions.map((option, index) => (
-                    <li key={`nav-link-${option.name}`}
-                      className={`h-full border-b-2 transition-colors ${pathname === option.path ? "border-white" : "border-transparent"}`}>
-                      <Link href={option.path} className="flex gap-3 tracking-widest text-lg text-white font-header">
-                        <p className="font-bold">
-                          {`0${index}`}
-                        </p>
-                        <p className="font-extralight">
-                          {option.name.toUpperCase()}
-                        </p>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
-            </SheetDescription>
-
-          </SheetContent>
-        </Sheet>
+        <MobileNavBar pathname={pathname} />
       </div>
     </div>
   )
