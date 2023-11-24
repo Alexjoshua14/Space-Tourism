@@ -38,7 +38,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${barlow.variable} ${barlow_condensed.variable} ${bellefair.variable} bg-slate-900 text-white `}>
+      <body className={`${barlow.variable} ${barlow_condensed.variable} ${bellefair.variable} bg-slate-900 text-white`}>
         <NavBar />
         {children}
       </body>

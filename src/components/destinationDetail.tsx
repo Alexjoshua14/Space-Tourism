@@ -9,16 +9,16 @@ interface DestinationDetailProps {
 
 const DestinationDetail: FC<DestinationDetailProps> = ({ name, description, distance, travel }) => {
   return (
-    <div className="flex flex-col gap-4 lg:gap-8 items-center lg:items-start text-center lg:text-left">
+    <div className="h-full flex flex-col justify-around sm:justify-normal sm:gap-4 lg:gap-8 items-center lg:items-start text-center lg:text-left">
       <h2 className="text-[56px] md:text-[80px] lg:text-[100px] leading-8 text-serif tracking-wider">
         {name.toUpperCase()}
       </h2>
-      <p className="font-sans text-secondary leading-loose ">
+      <p className="font-sans text-secondary leading-relaxed sm:leading-loose ">
         {description}
       </p>
       <div className="border-b-[1px] border-b-slate-500/60 w-full" />
       <div className="flex flex-col items-center gap-4 sm:flex-row w-full">
-        <div className="w-1/2 flex flex-col gap-4">
+        <div className="w-1/2 flex flex-col gap-1 sm:gap-4">
           <p className="text-secondary font-header tracking-widest">
             {`Avg. Distance`.toUpperCase()}
           </p>
@@ -26,7 +26,7 @@ const DestinationDetail: FC<DestinationDetailProps> = ({ name, description, dist
             {distance.toUpperCase()}
           </p>
         </div>
-        <div className="w-1/2 flex flex-col gap-4">
+        <div className="w-1/2 flex flex-col gap-1 sm:gap-4">
           <p className="text-secondary font-header tracking-widest">
             {`Est. Travel Time`.toUpperCase()}
           </p>
