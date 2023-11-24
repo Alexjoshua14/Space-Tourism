@@ -41,8 +41,8 @@ const NavBar: FC<NavBarProps> = ({ }) => {
   const pathname = usePathname()
 
   return (
-
     <div className="absolute top-0 lg:top-8 left-0 min-w-fit w-full flex h-24">
+      {/** Desktop */}
       <nav className="hidden min-w-fit w-full sm:flex h-full">
         <div className="z-10 w-1/2 px-4 translate-x-6 lg:translate-x-10 flex flex-row gap-16 items-center">
           <div className="min-w-fit">
@@ -66,13 +66,13 @@ const NavBar: FC<NavBarProps> = ({ }) => {
           ))}
         </ul>
       </nav>
+      {/** Mobile */}
       <div className="sm:hidden">
         <Sheet>
-          <SheetTrigger className="absolute right-0 p-8">
+          <SheetTrigger role='Open navigation' aria-label='Main' className="absolute right-0 p-8">
             <Image src="/assets/shared/icon-hamburger.svg" width={24} height={24} alt="hamburger" />
           </SheetTrigger>
           <SheetContent className="bg-opacity-10 backdrop-blur-2xl border-0 text-white">
-
             <SheetDescription>
               <nav>
                 <ul className="h-full min-w-fit w-1/2 flex flex-col gap-8 px-5 py-20">
