@@ -71,19 +71,19 @@ const NavBar: FC<NavBarProps> = ({ }) => {
           <SheetTrigger className="absolute right-0 p-8">
             <Image src="/assets/shared/icon-hamburger.svg" width={24} height={24} alt="hamburger" />
           </SheetTrigger>
-          <SheetContent className="bg-opacity-10 backdrop-blur-xl border-0 text-white">
+          <SheetContent className="bg-opacity-10 backdrop-blur-2xl border-0 text-white">
 
             <SheetDescription>
               <nav>
-                <ul className="h-full min-w-fit w-1/2 flex flex-col gap-12 px-14">
+                <ul className="h-full min-w-fit w-1/2 flex flex-col gap-8 px-5 py-20">
                   {navOptions.map((option, index) => (
                     <li key={`nav-link-${option.name}`}
-                      className={`h-full border-b-2 ${pathname === option.path ? "border-white" : "border-transparent"}`}>
-                      <Link href={option.path} className="flex gap-3 tracking-widest">
-                        <p className="font-medium">
+                      className={`h-full border-b-2 transition-colors ${pathname === option.path ? "border-white" : "border-transparent"}`}>
+                      <Link href={option.path} className="flex gap-3 tracking-widest text-lg text-white font-header">
+                        <p className="font-bold">
                           {`0${index}`}
                         </p>
-                        <p className="text-sm lg:text-base font-extralight">
+                        <p className="font-extralight">
                           {option.name.toUpperCase()}
                         </p>
                       </Link>
