@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-[80px] md:text-h1 font-serif;
+  }
+  h2 {
+    @apply text-[56px] md:text-[80px] lg:text-h2 font-serif;
+  }
+  h3 {
+    @apply text-h3 font-serif;
+  }
+  h4 {
+    @apply text-h4 font-serif;
+  }
+  h5 {
+    @apply text-[20px] tracking-[2.7px] md:text-[20px] md:tracking-[3.28px] lg:text-h5 font-header;
+  }
+  .subheading1 {
+    @apply text-subheading1 font-serif;
+  }
+  .subheading2 {
+    @apply text-subheading2 font-header;
+  }
+  .navText {
+    @apply text-navText font-header;
+  }
+}
