@@ -1,16 +1,15 @@
 import Background from '@/components/background/homeBackground'
-import Image from 'next/image'
 
 export default function Home() {
   return (
-    <main className="flex items-end p-40 min-h-screen">
+    <main>
       <Background />
-      <section className="w-full h-1/2 flex flex-col lg:flex-row items-center lg:items-end justify-center lg:justify-between px-20">
-        <div className="flex flex-col gap-6 w-[450px] h-1/2 lg:h-full text-center lg:text-left">
-          <h2 className="text-2xl leading-none tracking-[.35rem] font-header text-secondary">
+      <section className="w-full pt-14 sm:pt-24 pb-8 min-h-[90vh] h-full md:min-h-screen lg:min-h-none lg:h-1/2 flex flex-col lg:flex-row gap-8 items-center justify-around">
+        <div className="flex flex-col lg:gap-6 px-8 md:px-1 w-full md:w-3/5 max-w-[450px] h-1/2 lg:h-full text-center lg:text-left">
+          <h5 className="text-secondary">
             {`So, you want to travel to`.toUpperCase()}
-          </h2>
-          <h1 className="text-center text-[150px] leading-none font-serif">
+          </h5>
+          <h1 className="leading-none">
             {`Space`.toUpperCase()}
           </h1>
           <p className="leading-loose font-sans text-lg text-secondary font-light">
@@ -19,7 +18,9 @@ export default function Home() {
         </div>
         <div className="flex items-center justify-center">
           <div className="w-[242px] lg:w-[274px] aspect-square flex items-center justify-center bg-white text-black font-serif text-4xl rounded-full">
-            Explore
+            <h4>
+              Explore
+            </h4>
           </div>
         </div>
       </section>
