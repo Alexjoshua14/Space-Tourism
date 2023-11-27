@@ -28,7 +28,7 @@ const DetailsWrapper: FC<DetailsWrapperProps> = ({ destinations }) => {
       <div className="relative min-h-[16vh] md:h-[300px] lg:h-full lg:max-h-none w-full place-self-center grid place-content-center">
         <Image src={destinations[destinationIndex].images.webp} alt={`Image of ${destinations[destinationIndex].name}`} fill className="object-contain aspect-square" />
       </div>
-      <div className="flex-1 md:min-w-[500px] lg:w-1/3 h-full px-4 flex flex-col gap-4 md:gap-8 lg:gap-12 items-center lg:items-start">
+      <div className="flex-1 md:min-w-[500px] lg:w-1/3 h-full px-4 flex flex-col gap-4 md:gap-8 lg:gap-10 items-center lg:items-start">
         <ul className="flex gap-6 font-header font-light text-sm text-secondary">
           {destinations.map((destination, index) => (
             <li
