@@ -23,12 +23,12 @@ const DetailsWrapper: FC<DetailsWrapperProps> = ({ crew }) => {
 
   return (
     <section className="flex-1 flex flex-col gap-8">
-      <div className="flex-1 relative sm:absolute sm:bottom-0 lg:right-0 h-[45vh] lg:h-4/5 w-full sm:w-1/2 place-self-center grid place-content-center border-b-[1px] sm:border-0 border-b-slate-500/60 pointer-events-none">
+      <div className="flex-1 sm:flex-none relative sm:absolute sm:bottom-0 lg:right-0 h-[45vh] lg:h-4/5 w-full sm:w-1/2 place-self-center grid place-content-center border-b-[1px] sm:border-0 border-b-slate-500/60 pointer-events-none">
         <Image src={crew[crewIndex].images.webp} alt={`Image of crew member: ${crew[crewIndex].name}`} fill className="object-contain aspect-square" quality={100} />
       </div>
-      <div className="w-full lg:w-1/2 h-1/3 px-5 flex flex-col gap-4 items-center lg:items-start lg:justify-end">
-        <CrewDetail {...crew[crewIndex]} />
-        <ul className="flex gap-1 text-secondary">
+      <div className="lg:flex-1 w-full lg:w-1/2 h-1/3 px-5 flex flex-col gap-4 items-center lg:items-start lg:justify-center">
+        <CrewDetail {...crew[crewIndex]} className="lg:mt-auto" />
+        <ul className="flex gap-1 text-secondary lg:mt-auto">
           {crew.map((crew, index) => (
             <li key={`crew-member-${crew.name}`}>
               <button onClick={() => setCrewIndex(index)} className="w-full h-full p-2">

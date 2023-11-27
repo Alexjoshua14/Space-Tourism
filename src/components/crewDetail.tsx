@@ -1,14 +1,15 @@
-import { FC } from 'react'
+import { cn } from '@/lib/utils'
+import { FC, HTMLAttributes } from 'react'
 
-interface CrewDetailProps {
+interface CrewDetailProps extends HTMLAttributes<HTMLDivElement> {
   name: string,
   bio: string,
   role: string
 }
 
-const CrewDetail: FC<CrewDetailProps> = ({ name, bio, role }) => {
+const CrewDetail: FC<CrewDetailProps> = ({ name, bio, role, className }) => {
   return (
-    <div className="h-full w-full max-w-[500px] lg:max-w-[600px] flex flex-col gap-4 leading-none text-center lg:text-left">
+    <div className={cn("min-h-[250px] h-full w-full max-w-[600px] lg:max-w-[600px] flex flex-col gap-4 leading-none text-center lg:text-left", className)}>
       <h4 className="text-white/50">
         {role.toUpperCase()}
       </h4>
