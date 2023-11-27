@@ -9,28 +9,28 @@ interface DestinationDetailProps {
 
 const DestinationDetail: FC<DestinationDetailProps> = ({ name, description, distance, travel }) => {
   return (
-    <div className="h-full flex flex-col justify-around sm:justify-normal sm:gap-4 lg:gap-8 items-center lg:items-start text-center lg:text-left">
-      <h2 className="text-[56px] md:text-[80px] lg:text-[100px] leading-8 text-serif tracking-wider">
+    <div className="flex-1 max-h-[420px] flex flex-col justify-around lg:justify-normal gap-4 lg:gap-6 items-center lg:items-start text-center lg:text-left">
+      <h2 className="leading-none">
         {name.toUpperCase()}
       </h2>
-      <p className="font-sans text-secondary leading-relaxed sm:leading-loose ">
+      <p className="font-sans text-secondary bodyText leading-relaxed sm:leading-loose ">
         {description}
       </p>
       <div className="border-b-[1px] border-b-slate-500/60 w-full" />
       <div className="flex flex-col items-center gap-4 sm:flex-row w-full">
-        <div className="w-1/2 flex flex-col gap-1 sm:gap-4">
-          <p className="text-secondary font-header tracking-widest">
+        <div className="w-1/2 flex flex-col sm:gap-3">
+          <p className="text-secondary subheading2">
             {`Avg. Distance`.toUpperCase()}
           </p>
-          <p className="font-serif text-2xl">
+          <p className="subheading1">
             {distance.toUpperCase()}
           </p>
         </div>
-        <div className="w-1/2 flex flex-col gap-1 sm:gap-4">
-          <p className="text-secondary font-header tracking-widest">
+        <div className="w-1/2 flex flex-col sm:gap-3">
+          <p className="text-secondary subheading2">
             {`Est. Travel Time`.toUpperCase()}
           </p>
-          <p className="font-serif text-2xl">
+          <p className="subheading1">
             {travel.toUpperCase()}
           </p>
         </div>
