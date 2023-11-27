@@ -87,7 +87,7 @@ const NavBar: FC<NavBarProps> = ({ }) => {
         <ul className="h-full min-w-fit w-1/2 flex items-center justify-center gap-12 bg-white bg-opacity-5 backdrop-blur px-14">
           {navOptions.map((option, index) => (
             <li key={`nav-link-${option.name}`}
-              className={`h-full grid place-items-center border-b-2 ${pathname === option.path ? "border-white" : "border-transparent"}`}>
+              className={`h-full grid place-items-center border-b-2 ${pathname === option.path ? "border-active" : "border-idle"}`}>
               <Link href={option.path} className="flex gap-3 tracking-widest font-header">
                 <p className="hidden lg:block font-bold tracking-[0.2rem]">
                   {`0${index}`}

@@ -28,6 +28,16 @@
     @apply text-navText font-header;
   }
   .bodyText {
-    @apply text-[15px] sm:text-[16px] lg:text-[18px];
+    @apply text-[15px] sm:text-[16px] lg:text-[18px] font-sans leading-relaxed sm:leading-loose;
+  }
+}
+
+@layer components {
+  .border-active {
+    @apply border-b-[1px] border-white transition-colors;
+  }
+
+  .border-idle {
+    @apply border-b-[1px] border-transparent hover:border-white/50 transition-colors;
   }
 }

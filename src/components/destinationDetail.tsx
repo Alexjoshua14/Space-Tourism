@@ -13,7 +13,7 @@ const DestinationDetail: FC<DestinationDetailProps> = ({ name, description, dist
       <h2 className="leading-none">
         {name.toUpperCase()}
       </h2>
-      <p className="font-sans text-secondary bodyText leading-relaxed sm:leading-loose ">
+      <p className="text-secondary bodyText">
         {description}
       </p>
       <div className="border-b-[1px] border-b-slate-500/60 w-full" />

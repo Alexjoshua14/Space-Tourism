@@ -33,11 +33,11 @@ const DetailsWrapper: FC<DetailsWrapperProps> = ({ destinations }) => {
           {destinations.map((destination, index) => (
             <li
               key={`destination-${destination.name}`}
-              className={`border-b-2 ${destinationIndex === index ? "border-b-white" : "border-b-transparent"} text-white py-1 transition-all`}
+              className={`border-b-2 ${destinationIndex === index ? "border-active" : "border-idle"} text-white py-1 transition-all`}
             >
               <button
                 onClick={() => setDestinationIndex(index)}
-                className="hover:text-slate-500 h-full w-full transition-all"
+                className="h-full w-full transition-all"
               >
                 {destination.name.toUpperCase()}
               </button>
