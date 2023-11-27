@@ -1,4 +1,5 @@
 import Background from '@/components/background/homeBackground'
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -17,11 +18,12 @@ export default function Home() {
           </p>
         </div>
         <div className="flex items-center justify-center">
-          <div className="w-[150px] sm:w-[242px] lg:w-[274px] aspect-square flex items-center justify-center bg-white text-black font-serif text-4xl rounded-full">
-            <h4>
+          <Link href="/destination" className="relative w-[150px] sm:w-[242px] lg:w-[274px] aspect-square flex items-center justify-center bg-white text-black font-serif text-4xl rounded-full">
+            <h4 className="h-full w-full flex items-center justify-center peer">
               Explore
             </h4>
-          </div>
+            <div className="-z-10 absolute w-full h-full peer-hover:scale-150 bg-white/25 rounded-full transition-all" />
+          </Link>
         </div>
       </main>
     </>
