@@ -17,7 +17,7 @@ export default function Home() {
           </p>
         </div>
         <div className="flex items-center justify-center">
-          <div className="w-[242px] lg:w-[274px] aspect-square flex items-center justify-center bg-white text-black font-serif text-4xl rounded-full">
+          <div className="w-[150px] sm:w-[242px] lg:w-[274px] aspect-square flex items-center justify-center bg-white text-black font-serif text-4xl rounded-full">
             <h4>
               Explore
             </h4>
