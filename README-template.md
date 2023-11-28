@@ -28,17 +28,23 @@ Users should be able to:
 - See hover states for all interactive elements on the page
 - View each page and be able to toggle between the tabs to see new information
 
-### Screenshot
+### Screenshots
+<div align="left">
+  <h4>Desktop</h4>
+  <img src="https://github.com/Alexjoshua14/Space-Tourism/assets/59298565/0860e822-e495-4a82-a980-09fa0a76b360" alt="Image 1" width="400">
+  <img src="https://github.com/Alexjoshua14/Space-Tourism/assets/59298565/2c0eeff5-70e6-4c75-96a4-fd148360202d" alt="Image 2" width="400">
+  <img src="https://github.com/Alexjoshua14/Space-Tourism/assets/59298565/19b3f8b0-1826-4168-ac20-ff75cc26801b" alt="Image 3" width="400">
+  <img src="https://github.com/Alexjoshua14/Space-Tourism/assets/59298565/c0442c5a-d82c-4e76-bff2-6d908eeeaeb5" alt="Image 4" width="400">
+</div>
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+<div align="left" style="display: flex; justify-content: space-around; gap: 20px;">
+  <h4>Mobile</h4>
+  <img src="https://github.com/Alexjoshua14/Space-Tourism/assets/59298565/4646325a-62d2-4a7e-bfe7-cc177f891c05" alt="Image 1" width="140">
+  <img src="https://github.com/Alexjoshua14/Space-Tourism/assets/59298565/8c2c72c5-4890-417b-933e-3a9b367bdc76" alt="Image 2" width="140">
+  <img src="https://github.com/Alexjoshua14/Space-Tourism/assets/59298565/4aa337a5-1e58-4fcc-8909-8c46683dafd2" alt="Image 3" width="140">
+  <img src="https://github.com/Alexjoshua14/Space-Tourism/assets/59298565/7df8c4ee-3960-4189-890c-df61612318dc" alt="Image 4" width="140">
+  <img src="https://github.com/Alexjoshua14/Space-Tourism/assets/59298565/9bb6e433-0bfb-4687-923d-72d5f20dbd84" alt="Image 4" width="140">
+</div>
 
 ### Links
 
